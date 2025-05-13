@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pomocrossing 🍃</title>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- VIDEO DE FONDO -->
+  <video id="bgVideo" autoplay muted loop playsinline>
+    <source src="assets/backgrounds/Leaf.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Botón "Más información" -->
+  <a href="about.html" id="cornerBtn">
+    <img src="assets/icons/more.svg" alt="Más información">
+  </a>
+
+  <!-- Fondo oscuro para modal -->
+  <div id="overlay" class="hidden"></div>
+
+  <!-- Panel de configuración -->
+  <div id="settingsPanel" class="hidden">
+    <button id="closeSettings" class="close-btn">✖</button>
+    <h2 class="settings-title">Configuración</h2>
+
+    <div class="settings-content">
+      <!-- Área de contenido de pestañas -->
+      <div class="tab-display">
+        <div class="tab-content" id="general">
+          <label for="languageSelect">🌍 Idioma:</label>
+          <select id="languageSelect">
+            <option value="es">Español</option>
+            <option value="gl">Galego</option>
+            <option value="en">English</option>
+          </select>
+
+          <label for="themeSelect">🖼️ Tema:</label>
+          <select id="themeSelect">
+            <option value="leaf">Naturaleza</option>
+            <option value="countryside">Ciudad de noche</option>
+            <option value="space">Cafetería</option>
+          </select>
+        </div>
+
+        <div class="tab-content hidden" id="timers">
+          <p>⏱️ Axustes de temporizador</p>
+          <button>Duración Pomodoro</button>
+          <button>Duración Descanso</button>
+        </div>
+
+        <div class="tab-content hidden" id="sounds">
+          <p>🎵 Opcións de son</p>
+          <button>Sonido de fondo</button>
+          <button>Volumen</button>
+        </div>
+      </div>
+
+      <!-- Menú lateral de pestañas -->
+      <div class="tabs">
+        <button class="tab active" data-tab="general">General</button>
+        <button class="tab" data-tab="timers">Temporizador</button>
+        <button class="tab" data-tab="sounds">Sonidos</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botones superiores -->
+  <div class="mode-buttons">
+    <button class="mode active" data-mode="pomodoro">Pomodoro</button>
+    <button class="mode" data-mode="break">Descanso</button>
+  </div>
+
+  <!-- Temporizador central -->
+  <div class="container">
+    <div id="timer">25:00</div>
+    <div class="controls">
+      <button id="playPauseBtn"><img src="assets/icons/play.svg" alt="Play" /></button>
+      <button><img src="assets/icons/reload.svg" alt="Repeat" /></button>
+      <button id="settingsBtn"><img src="assets/icons/configuration-gear-options-preferences-settings-system-svgrepo-com.svg" alt="Settings" /></button>
+      <button id="musicBtn"><img src="assets/icons/musicon.svg" alt="Music On" /></button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
